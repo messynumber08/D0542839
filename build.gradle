@@ -1,0 +1,16 @@
+plugins {
+    id "java"
+	id "jacoco"
+	id "org.sonarqube" version "2.7"
+}
+
+javadoc.options.encoding = 'UTF-8'
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.+'
+}
