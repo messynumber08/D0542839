@@ -2,7 +2,6 @@
 import java.security.SecureRandom;
 import java.util.Random;
 
-
 public class Pokemon {
   private String name = null;
   private int health = 0;
