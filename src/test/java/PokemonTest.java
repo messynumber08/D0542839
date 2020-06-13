@@ -4,21 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class PokemonTest {
-  private Pokemon pokemon1, pokemon2;
-
-  @Test
-  public void win2() throws Exception {
-    pokemon1 = new Pokemon("duck", 7, 60);
-    pokemon2 = new Pokemon("snake", 8, 95);
-    assertEquals(pokemon2, pokemon1.battle(pokemon2));
-  }
-
-  @Test
-  public void win1() throws Exception {
-    pokemon1 = new Pokemon("duck", 20, 100);
-    pokemon2 = new Pokemon("snake", 7, 90);
-    assertEquals(pokemon1, pokemon1.battle(pokemon2));
-  }
+  private Pokemon pokemon1;
 
   @Test(expected = Exception.class)
   public void Error1() throws Exception {
@@ -61,7 +47,7 @@ public class PokemonTest {
   @Test
   public void levelUp() throws Exception {
     pokemon1 = new Pokemon("enemy", 87, 63);
-    assertEquals(2, pokemon1.levelUp());
+    assertEquals("level up", pokemon1.levelUp());
   }
 
   @Test
@@ -69,7 +55,7 @@ public class PokemonTest {
     pokemon1 = new Pokemon("enemy", 87, 63);
     pokemon1.gainExp(30);
     pokemon1.gainExp(30);
-    assertEquals(3, pokemon1.levelUp());
+    assertEquals("level up", pokemon1.levelUp());
   }
 
 }
