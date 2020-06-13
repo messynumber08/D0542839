@@ -26,31 +26,31 @@ public class Pokemon {
     int health1 = this.health;
     int health2 = enemy.health;
     result += this.name + "對" + enemy.name + "發起了挑戰";
-//    System.out.println(this.name + "對" + enemy.name + "發起了挑戰");
+
     do {
 
       int attack1 = ran.nextInt(this.strength) + (int) (this.strength * 0.2);
       health2 -= attack1;
       result += "\n" + this.name + "攻擊," + enemy.name + "受到" + attack1 + "點傷害";
-//      System.out.println(this.name + "攻擊," + enemy.name + "受到" + attack1 + "點傷害");
+
       if (health2 <= 0)
         break;
 
       int attack2 = ran.nextInt(enemy.strength) + (int) (enemy.strength * 0.4);
       health1 -= attack2;
       result += "\n" + enemy.name + "攻擊," + this.name + "受到" + attack2 + "點傷害";
-//      System.out.println(enemy.name + "攻擊," + this.name + "受到" + attack2 + "點傷害");
+
       if (health1 <= 0)
         break;
     } while (true);
 
     if (health1 < 1) {
       result += "\n" + this.name + "戰敗了," + enemy.name + "還有" + health2 + "點血量";
-//      System.out.println(this.name + "戰敗了," + enemy.name + "還有" + health2 + "點血量");
+
       return result;
     } else {
       result += "\n" + this.name + "勝利了," + this.name + "還有" + health1 + "點血量";
-//      System.out.println(this.name + "勝利了," + this.name + "還有" + health1 + "點血量");
+
       return result;
     }
   }
@@ -58,15 +58,15 @@ public class Pokemon {
   public String getMyRole() {
     String result = "";
     result += "名稱:" + this.name;
-//    System.out.println("名稱:" + this.name);
+
     result += "\n" + "攻擊" + this.strength;
-//    System.out.println("攻擊" + this.strength);
+
     result += "\n" + "血量" + this.health;
-//    System.out.println("血量" + this.health);
+
     result += "\n" + "等級" + this.level;
-//    System.out.println("等級" + this.level);
+
     result += "\n" + "經驗值" + this.exp;
-//    System.out.println("經驗值" + this.exp);
+
     return result;
   }
 
@@ -83,7 +83,7 @@ public class Pokemon {
     this.level++;
     this.strength += 5;
     this.health += 15;
-//    System.out.println("level up");
+
     this.getMyRole();
     return "level up";
   }
