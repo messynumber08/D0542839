@@ -25,6 +25,7 @@ public class Pokemon {
     int health1 = this.health;
     int health2 = enemy.health;
     result += this.name + "對" + enemy.name + "發起了挑戰";
+    boolean flag = true;
     do {
 
       int attack1 = random.nextInt(this.strength) + (int) (this.strength * 0.2);
@@ -32,15 +33,15 @@ public class Pokemon {
       result += "\n" + this.name + "攻擊," + enemy.name + "受到" + attack1 + "點傷害";
 
       if (health2 <= 0)
-        break;
+        flag = false;
 
       int attack2 = random.nextInt(enemy.strength) + (int) (enemy.strength * 0.4);
       health1 -= attack2;
       result += "\n" + enemy.name + "攻擊," + this.name + "受到" + attack2 + "點傷害";
 
       if (health1 <= 0)
-        break;
-    } while (true);
+        flag = false;
+    } while (flag);
 
     if (health1 < 1) {
       result += "\n" + this.name + "戰敗了," + enemy.name + "還有" + health2 + "點血量";
