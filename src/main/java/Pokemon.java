@@ -21,34 +21,34 @@ public class Pokemon {
 
   public String battle(Pokemon enemy, int seed) {
     Random random = new Random(seed);
-    String result = "";
+    StringBuilder result = new StringBuilder();
     int health1 = this.health;
     int health2 = enemy.health;
-    result += this.name + "對" + enemy.name + "發起了挑戰";
+    result.append(this.name + "對" + enemy.name + "發起了挑戰");
     boolean flag = true;
     do {
 
       int attack1 = random.nextInt(this.strength) + (int) (this.strength * 0.2);
       health2 -= attack1;
-      result += "\n" + this.name + "攻擊," + enemy.name + "受到" + attack1 + "點傷害";
+      result.append("\n" + this.name + "攻擊," + enemy.name + "受到" + attack1 + "點傷害");
 
       if (health2 <= 0)
         flag = false;
 
       int attack2 = random.nextInt(enemy.strength) + (int) (enemy.strength * 0.4);
       health1 -= attack2;
-      result += "\n" + enemy.name + "攻擊," + this.name + "受到" + attack2 + "點傷害";
+      result.append("\n" + enemy.name + "攻擊," + this.name + "受到" + attack2 + "點傷害");
 
       if (health1 <= 0)
         flag = false;
     } while (flag);
 
     if (health1 < 1) {
-      result += "\n" + this.name + "戰敗了," + enemy.name + "還有" + health2 + "點血量";
+      result.append("\n" + this.name + "戰敗了," + enemy.name + "還有" + health2 + "點血量");
     } else {
-      result += "\n" + this.name + "勝利了," + this.name + "還有" + health1 + "點血量";
+      result.append("\n" + this.name + "勝利了," + this.name + "還有" + health1 + "點血量");
     }
-    return result;
+    return result.toString();
   }
 
   public String getMyRole() {
