@@ -33,7 +33,7 @@ public class Pokemon {
       result.append("\n" + this.name + "攻擊," + enemy.name + "受到" + attack1 + "點傷害");
 
       if (health2 <= 0)
-        flag = false;
+        break;
 
       int attack2 = random.nextInt(enemy.strength) + (int) (enemy.strength * 0.4);
       health1 -= attack2;
@@ -52,18 +52,14 @@ public class Pokemon {
   }
 
   public String getMyRole() {
-    String result = "";
-    result += "名稱:" + this.name;
+    StringBuilder result = new StringBuilder();
 
-    result += "\n" + "攻擊" + this.strength;
-
-    result += "\n" + "血量" + this.health;
-
-    result += "\n" + "等級" + this.level;
-
-    result += "\n" + "經驗值" + this.exp;
-
-    return result;
+    result.append("名稱:" + this.name);
+    result.append("\n" + "攻擊" + this.strength);
+    result.append("\n" + "血量" + this.health);
+    result.append("\n" + "等級" + this.level);
+    result.append("\n" + "經驗值" + this.exp);
+    return result.toString();
   }
 
   public int gainExp(int exp) {
