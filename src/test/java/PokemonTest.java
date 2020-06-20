@@ -7,12 +7,13 @@ public class PokemonTest {
 
   @Test
   public void Edge() throws Exception {
-    player = new Pokemon("player", 1, 1, 1, 0);
+    assertNotNull(player = new Pokemon("player", 1, 1, 1, 0));
   }
 
   @Test
   public void Edge2() throws Exception {
-    player = new Pokemon("player", 2, 2, 2, 1);
+    assertNotNull(player = new Pokemon("player", 2, 2, 2, 1));
+    
   }
 
   @Test(expected = Exception.class)
