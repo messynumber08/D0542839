@@ -1,6 +1,7 @@
 
 import java.util.Random;
 
+
 public class Pokemon {
   private String name = null;
   private int strength = 1;
