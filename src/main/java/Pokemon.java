@@ -10,19 +10,19 @@ public class Pokemon {
 
   public Pokemon(String name, int strength, int health, int level, int exp) throws Exception {
     if (name == null)
-      throw new Exception("name cannot be empty");
+      throw new myException("name cannot be empty");
 
     if (strength < 1)
-      throw new Exception("strength cannot be less than 1");
+      throw new myException("strength cannot be less than 1");
 
     if (health < 1)
-      throw new Exception("health cannot be less than 1");
+      throw new myException("health cannot be less than 1");
 
     if (level < 1)
-      throw new Exception("level cannot be less than 1");
+      throw new myException("level cannot be less than 1");
 
     if (exp < 0)
-      throw new Exception("exp  cannot be less than 0");
+      throw new myException("exp  cannot be less than 0");
 
     this.name = name;
     this.strength = strength;
